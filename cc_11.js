@@ -88,5 +88,10 @@ class Library  // creates library class
     }
 }
 
+// Task 3 Test Cases
+const library = new Library(); // makes library constant
+library.addBorrower(borrower1); // adds borrower1 to library
+library.addBook(book1); // adds book1 to library
+library.listBooks(); // logs each book in library
 
 
