@@ -60,4 +60,19 @@ class Library  // creates library class
     addBorrower(borrower) {
         this.borrowers.push(borrower); // adds borrower into borrowers array
     };
-     
+
+// Task 4
+    addBorrower(borrower){ // adds a method to add borrowers to library
+        this.borrowers.push(borrower);
+    }
+    lendBook(borrowerId, isbn) {
+        const book = this.books.find(book => book.isbn === isbn);
+        const borrower = this.borrowers.find(borrower => borrower.borrowerId === borrowerId);
+
+        if (book && borrower && book.copies > 0) { // checks conditions to lend book
+            book.updateCopies(-1); // removes 1 from stock
+            borrower.borrowBook(book.title);        
+        } else {
+            console.log("Cannot lend book.")
+        }
+    }
