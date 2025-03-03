@@ -76,3 +76,17 @@ class Library  // creates library class
             console.log("Cannot lend book.")
         }
     }
+
+    // Task 5
+    returnBook(borrowerId, isbn) {
+        const book = this.books.find(book => book.isbn === isbn);
+        const borrower = this.borrowers.find(borrower => borrower.borrowerId === borrowerId);
+        if (book && borrower) { // checks conditions to return book
+            book.updateCopies(1); // adds 1 to stock
+            borrower.returnBook(book.title);
+        }
+    }
+}
+
+
+
