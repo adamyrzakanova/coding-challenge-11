@@ -94,4 +94,10 @@ library.addBorrower(borrower1); // adds borrower1 to library
 library.addBook(book1); // adds book1 to library
 library.listBooks(); // logs each book in library
 
+// Task 4: Implementing Book Borrowing
+// Task 4 Test Cases
+library.lendBook(201, 123456); // lends book isbn 123456 to borrowerID 201
+console.log(book1.getDetails()); // logs book details. copies is one less
+console.log(borrower1.borrowedBooks); // logs borrowers borrowed books
+
 
