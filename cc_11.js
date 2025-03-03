@@ -20,3 +20,26 @@ const book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 123456, 5); //
 console.log(book1.getDetails()); // logs details of the book
 book1.updateCopies(-1); // removes 1 from copies
 console.log(book1.getDetails()); // logs details of the book
+
+// Task 2: Creating a Borrower Class
+
+class Borrower { // creates borrower class
+    constructor(name, borrowerId, borrowedBooks) { // creates properties and links them
+        this.name = name;
+        this.borrowerId = borrowerId;
+        this.borrowedBooks = []; // makes borrowedBooks an array
+    };
+    borrowBook(bookTitle) {
+        this.borrowedBooks.push(bookTitle); // adds book to borrowed array
+    };
+    returnBook(book) {
+        this.borrowedBooks = this.borrowedBooks.filter(b => b !== book);
+    }; // filters for book in borrowed array
+};
+
+// Task 2 Test Cases
+const borrower1 = new Borrower("Alice Johnson", 201); // makes new borrower
+borrower1.borrowBook("The Great Gatsby"); // adds book to borrower array
+console.log(borrower1.borrowedBooks); // logs array of borrowed books
+borrower1.returnBook("The Great Gatsby"); // remove book from borrower array
+console.log(borrower1.borrowedBooks); // logs array of borrowed books
