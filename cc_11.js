@@ -100,4 +100,9 @@ library.lendBook(201, 123456); // lends book isbn 123456 to borrowerID 201
 console.log(book1.getDetails()); // logs book details. copies is one less
 console.log(borrower1.borrowedBooks); // logs borrowers borrowed books
 
+// Task 5: Implementing Book Returns
+// Task 5 Test Cases
+library.returnBook(201, 123456); // returns book
+console.log(book1.getDetails()); // logs book details
+console.log(borrower1.borrowedBooks); 
 
